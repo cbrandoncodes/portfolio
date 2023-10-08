@@ -1,0 +1,44 @@
+@use "sass:map";
+@use "../../../styles/config" as *;
+
+.input {
+  width: 100%;
+  background: none;
+  color: var(--zinc-light);
+  font-family: $font-mono;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: var(--zinc-light);
+  line-height: map-get($leading, "snug");
+  padding: 1.5rem 0;
+  transition: all 0.2s ease;
+
+  &.input--error {
+    & {
+      color: var(--red);
+      border-color: var(--red);
+    }
+
+    &::placeholder {
+      color: var(--red);
+    }
+
+    &:focus,
+    &:focus-visible {
+      &::placeholder {
+        color: var(--red);
+      }
+
+      border-color: var(--red);
+    }
+  }
+
+  &:focus,
+  &:focus-visible {
+    &::placeholder {
+      color: var(--primary);
+    }
+
+    border-color: var(--primary);
+  }
+}

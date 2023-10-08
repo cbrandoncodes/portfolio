@@ -1,0 +1,15 @@
+@use "../../styles/config" as *;
+
+.page-transition {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  z-index: 30;
+  pointer-events: none;
+
+  .block {
+    width: 25%;
+    background-color: var(--secondary-alt);
+  }
+}

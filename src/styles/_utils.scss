@@ -1,0 +1,88 @@
+@use "sass:list";
+@use "sass:map";
+@use "config" as *;
+
+@function getFontSize($size) {
+  $fontSm: list.nth($size, 1);
+  $fontLg: list.nth($size, 2);
+  $v: (100 * ($fontLg - $fontSm)) / ($screen-2xl - $screen-xs);
+  $r: (($screen-xs * $fontLg) - ($screen-2xl * $fontSm)) /
+    ($screen-xs - $screen-2xl);
+
+  @return clamp(#{$fontSm}px, #{$v}vw + #{$r}px, #{$fontLg}px);
+}
+
+.container {
+  width: 100%;
+  max-width: 1284px;
+  margin: 0 auto;
+  padding: 0 0.75rem;
+  overflow: hidden;
+
+  @media screen and (min-width: #{$screen-sm}px) {
+    padding: 0 2rem;
+  }
+}
+
+.link {
+  position: relative;
+  color: var(--white);
+  text-decoration: none;
+
+  span {
+    position: inherit;
+    z-index: 3;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    display: block;
+    background-color: var(--primary);
+    z-index: 2;
+    transition: all 0.2s ease;
+  }
+
+  &:hover::after {
+    height: 90%;
+  }
+}
+
+.font-sans {
+  font-family: $font-sans;
+}
+.font-serif {
+  font-family: $font-serif;
+}
+.font-mono {
+  font-family: $font-mono;
+}
+
+@each $name, $size in $font-steps {
+  $fontSm: list.nth($size, 1);
+  $fontLg: list.nth($size, 2);
+  $v: (100 * ($fontLg - $fontSm)) / ($screen-2xl - $screen-xs);
+  $r: (($screen-xs * $fontLg) - ($screen-2xl * $fontSm)) /
+    ($screen-xs - $screen-2xl);
+
+  .text-#{$name} {
+    font-size: #{$fontLg}px;
+    font-size: getFontSize($size);
+  }
+}
+
+@each $name, $value in $leading {
+  .leading-#{$name} {
+    line-height: $value;
+  }
+}
+
+@each $name, $value in $rounded {
+  .rounded-#{$name} {
+    border-radius: $value;
+  }
+}

@@ -1,0 +1,95 @@
+@use "sass:map";
+@use "../../../styles/config" as *;
+
+html[data-theme="light"] {
+  .button {
+    &.button--light {
+      &:hover {
+        background-color: #212121;
+      }
+
+      &:disabled {
+        background-color: #171717bf;
+      }
+    }
+    &.button--base {
+      &:hover {
+        background-color: #212121;
+      }
+
+      &:disabled {
+        background-color: #171717bf;
+      }
+    }
+  }
+}
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-mono;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.25px;
+  border-radius: map-get($rounded, "lg");
+  border: none;
+  overflow: hidden;
+  transition: background-color 0.25s ease;
+
+  &:disabled {
+    cursor: not-allowed;
+
+    & > * {
+      pointer-events: none;
+    }
+  }
+
+  &.button--light {
+    background: var(--zinc-light);
+    color: var(--zinc-darkest);
+
+    &:hover {
+      background-color: #efefef;
+    }
+
+    &:disabled {
+      background-color: #e5e5e5bf;
+    }
+  }
+  &.button--primary {
+    background-color: var(--primary-dark);
+    color: var(--white);
+
+    &:hover {
+      background-color: #047dbe;
+    }
+
+    &:disabled {
+      background-color: #0473afbf;
+    }
+  }
+  &.button--base {
+    background: var(--zinc-light);
+    color: var(--zinc-darkest);
+
+    &:hover {
+      background-color: #efefef;
+    }
+
+    &:disabled {
+      background-color: #e5e5e5bf;
+    }
+  }
+
+  &.button--sm {
+    padding: 0.75rem;
+  }
+  &.button--md {
+    padding: 1rem 1.25rem;
+  }
+  &.button--lg {
+    padding: 1.25rem 1.75rem;
+  }
+}

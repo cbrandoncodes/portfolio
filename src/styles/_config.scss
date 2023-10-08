@@ -1,0 +1,88 @@
+// screen sizes
+$screen-xs: 480;
+$screen-sm: 640;
+$screen-md: 768;
+$screen-lg: 1024;
+$screen-xl: 1280;
+$screen-2xl: 1536;
+
+// font sizes
+$font-steps: (
+  "xs": (
+    10,
+    12,
+  ),
+  "sm": (
+    12,
+    14,
+  ),
+  "md": (
+    14,
+    16,
+  ),
+  "lg": (
+    16,
+    18,
+  ),
+  "xl": (
+    18,
+    20,
+  ),
+  "2xl": (
+    20,
+    24,
+  ),
+  "3xl": (
+    24,
+    28,
+  ),
+  "4xl": (
+    28,
+    36,
+  ),
+  "5xl": (
+    40,
+    48,
+  ),
+  "6xl": (
+    52,
+    60,
+  ),
+  "7xl": (
+    72,
+    80,
+  ),
+  "8xl": (
+    84,
+    108,
+  ),
+);
+
+// leading
+$leading: (
+  "tight": 1.2,
+  "snug": 1.375,
+  "normal": 1.5,
+  "relaxed": 1.625,
+  "mild-loose": 1.75,
+  "loose": 2,
+);
+
+// rounded corners
+$rounded: (
+  "none": 0,
+  "sm": 0.125rem,
+  "md": 0.25rem,
+  "lg": 0.5rem,
+  "xl": 0.75rem,
+  "2xl": 1rem,
+  "3xl": 1.5rem,
+  "full": 9999px,
+);
+
+// fonts
+$font-sans: var(--font-satoshi), sans-serif;
+$font-serif: var(--font-canela), serif;
+$font-mono: var(--font-roboto-mono), monospace;
+
+// others

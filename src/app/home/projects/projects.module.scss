@@ -1,0 +1,102 @@
+@use "sass:map";
+@use "../../../styles/config" as *;
+
+.expertise {
+  width: 100%;
+  padding: 4rem 0;
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+      margin-bottom: 5rem;
+
+      .heading {
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .sub-heading {
+        color: var(--zinc-lightest);
+        font-weight: 400;
+        letter-spacing: 0.25px;
+      }
+    }
+
+    .works {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+
+      .work {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--secondary-alt);
+        border-radius: map-get($rounded, "xl");
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+        overflow: hidden;
+        transition: all 0.2s ease;
+
+        .work-img {
+          width: 100%;
+          overflow: hidden;
+          transition: transform 0.25s ease;
+          cursor: pointer;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+
+          &:hover {
+            transform: scale(1.0125);
+          }
+        }
+
+        .work-meta {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          color: var(--zinc-light);
+          padding: 1.5rem 1.25rem;
+
+          .work-title {
+            font-weight: 600;
+            text-transform: capitalize;
+            letter-spacing: 0.25px;
+          }
+
+          .work-link {
+            position: relative;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+          }
+        }
+
+        .work-text {
+          font-weight: 400;
+          font-family: $font-mono;
+        }
+      }
+
+      @media screen and (min-width: #{$screen-md}px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}

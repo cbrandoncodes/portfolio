@@ -1,0 +1,168 @@
+@use "sass:map";
+@use "../../../styles/config" as *;
+@use "../../../styles/utils" as *;
+
+html[data-theme="light"] {
+  .hero {
+    overflow: hidden;
+  }
+}
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-image: url("/assets/images/home-hero-cover.jpg");
+  background-position: center center;
+  background-size: cover;
+  padding-top: 4rem;
+
+  .bg-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 102%;
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #00000012 60%, #1a191d 100%);
+    opacity: 1;
+    transition: background-color 0.3s, border-radius 0.3s, opacity 0.3s;
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+
+    .shine-container {
+      position: absolute;
+      left: calc(50% + 100px);
+      top: calc(50% - 30vh);
+      transform: translateX(-50%) translateY(-50%);
+      animation: side-ways 1.5s cubic-bezier(0.49, 0.35, 0.58, 0.83) infinite
+        alternate;
+
+      .shine {
+        transition: background-color 0.3s, border 0.3s, border-radius 0.3s,
+          box-shadow 0.3s, -webkit-border-radius 0.3s, -webkit-box-shadow 0.3s;
+
+        .circle-yel {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          background-color: var(--white);
+          box-shadow: inset 0 0 30px 0 #fff, inset 20px 0 30px #ffd400,
+            inset -20px 0 30px red, inset 20px 0 300px #ff40d6,
+            inset -20px 0 300px #e3ff4b, 0 0 50px #fff, -10px 0 100px #fbff00,
+            10px 0 80px #f55;
+        }
+      }
+
+      @keyframes side-ways {
+        0% {
+          transform: translateX(calc(-50% - 2px)) translateY(-50%);
+        }
+        25% {
+          transform: translateX(calc(-50% - 1px)) translateY(-50%);
+        }
+        50% {
+          transform: translateX(-50%) translateY(-50%);
+        }
+        75% {
+          transform: translateX(calc(-50% + 1px)) translateY(-50%);
+        }
+        100% {
+          transform: translateX(calc(-50% + 2px)) translateY(-50%);
+        }
+      }
+    }
+
+    .main {
+      position: relative;
+      max-width: 840px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+
+      .heading {
+        font-size: 56px;
+        color: #e5e5e5;
+        letter-spacing: 0.5px;
+        margin-bottom: 1rem;
+      }
+
+      .sub-heading {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        color: #e5e5e5;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+
+        & span:not(span:nth-child(3)) {
+          display: none;
+        }
+      }
+
+      .scroll {
+        position: absolute;
+        bottom: 3rem;
+        left: 50%;
+        width: 52px;
+        height: 52px;
+        background: none;
+        transform: translateX(-50%);
+
+        &:focus-visible {
+          outline-color: #ffffff;
+        }
+      }
+
+      @media screen and (min-width: #{$screen-sm}px) {
+        .heading {
+          font-size: getFontSize(map-get($font-steps, "8xl"));
+        }
+
+        .sub-heading {
+          font-size: getFontSize(map-get($font-steps, "lg"));
+          gap: 1.25rem;
+
+          & span:not(span:nth-child(3)) {
+            display: inline;
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: #{$screen-md}px) {
+      .shine-container {
+        left: calc(50% + 100px);
+        top: calc(50% - 30vh);
+      }
+    }
+
+    @media screen and (min-width: #{$screen-xl}px) {
+      .shine-container {
+        left: calc(50% + 7vw);
+        top: calc(50% - 31vh);
+
+        .shine {
+          .circle-yel {
+            width: 50px;
+            height: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: #{$screen-sm}px) {
+    padding-top: 5rem;
+  }
+}

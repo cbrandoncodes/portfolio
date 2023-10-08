@@ -1,0 +1,101 @@
+@use "../../../styles/config" as *;
+
+.expertise {
+  width: 100%;
+  padding: 4rem 0;
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .heading {
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 1050px;
+      display: grid;
+      align-items: stretch;
+      // border: 1px solid var(--zinc);
+
+      & > .content-box:nth-child(1) {
+        border-top: 1px solid var(--zinc);
+      }
+
+      .content-box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid var(--zinc);
+        margin: 0 auto;
+        padding: 3rem 1.25rem;
+
+        & > div {
+          width: 100%;
+          max-width: 250px;
+          margin: 0 auto;
+
+          .content-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--zinc-light);
+            margin-bottom: 1rem;
+
+            .content-title {
+              font-weight: 600;
+              letter-spacing: 0.25px;
+            }
+          }
+
+          .content-text {
+            font-weight: 400;
+            font-family: $font-mono;
+          }
+        }
+      }
+
+      & > .content-box {
+        border-top: none;
+      }
+
+      .divide {
+        width: 0px;
+        background-color: var(--zinc);
+        border-right: 1px solid var(--zinc);
+      }
+
+      @media screen and (min-width: #{$screen-sm}px) {
+        grid-template-columns: repeat(2, 1fr);
+
+        & > .content-box:nth-child(2) {
+          border-top: 1px solid var(--zinc);
+        }
+        .content-box:nth-child(even) {
+          border-left: none;
+        }
+        .content-box {
+          border-top: none;
+        }
+      }
+
+      @media screen and (min-width: #{$screen-lg}px) {
+        grid-template-columns: repeat(3, 1fr);
+
+        .content-box:not(.content-box:nth-child(1)) {
+          border-left: none;
+        }
+        .content-box {
+          border-top: 1px solid var(--zinc);
+        }
+      }
+    }
+  }
+}
