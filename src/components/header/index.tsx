@@ -25,16 +25,12 @@ export default function Header() {
 
   const [theme, setTheme] = useLocalStorage<"light" | "dark" | null>(
     themeStoreKey,
-    () => {
-      if (typeof localStorage !== "undefined") {
-        return (localStorage?.getItem(themeStoreKey) as any) ?? "light";
-      }
-
-      return "light";
-    }
+    "light"
   );
   const [navOpen, setNavOpen] = useState(false);
   const [isWhite, setIsWhite] = useState(false);
+
+  console.log("theme: ", theme);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrollYPos(latest);
@@ -181,14 +177,7 @@ export default function Header() {
           </nav>
           <label
             tabIndex={0}
-            className={clsx(
-              headerStyles["theme-toggle"],
-              {
-                [headerStyles["theme-toggle--light"]]: theme === "light",
-                [headerStyles["theme-toggle--dark"]]: theme !== "light",
-              },
-              "button"
-            )}
+            className={clsx(headerStyles["theme-toggle"], "button")}
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
           >
             <span />

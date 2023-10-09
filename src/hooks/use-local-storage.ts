@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export default function useLocalStorage<ValueType>(
   key: string,
-  defaultValue: ValueType | (() => ValueType)
+  defaultValue: ValueType
 ): [ValueType, (newValue: ValueType) => void] {
   const [value, setValue] = useState<ValueType>(() => {
     if (typeof localStorage !== "undefined") {
@@ -10,9 +10,7 @@ export default function useLocalStorage<ValueType>(
       return storedValue === null ? defaultValue : JSON.parse(storedValue);
     }
 
-    return typeof defaultValue === "function"
-      ? (defaultValue as any)()
-      : defaultValue;
+    return defaultValue;
   });
 
   useEffect(() => {
