@@ -13,15 +13,19 @@ import { m, useMotionValueEvent, useScroll } from "framer-motion";
 import { usePathname, useSelectedLayoutSegment } from "next/navigation";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import useDeviceDetect from "@/hooks/use-device-detect";
 
 export default function Header() {
   const pathname = usePathname();
   const segment = useSelectedLayoutSegment() ?? "home";
+  const { isMobile } = useDeviceDetect();
   const { scrollY } = useScroll();
   const [scrollYPos, setScrollYPos] = useState(0);
   const [scrollDir, setScrollDir] = useState<"up" | "down">("down");
   const scrollThreshold = 40;
-  const hideNav = scrollYPos > scrollThreshold && scrollDir === "down";
+  const hideNav = isMobile
+    ? false
+    : scrollYPos > scrollThreshold && scrollDir === "down";
 
   const [theme, setTheme] = useLocalStorage<"light" | "dark" | null>(
     themeStoreKey,
@@ -120,7 +124,7 @@ export default function Header() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry, i) => {
+        entries.forEach((entry) => {
           setScrollDirection();
 
           if (!shouldUpdate(entry)) return;
