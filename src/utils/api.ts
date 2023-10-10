@@ -32,8 +32,12 @@ export function apiFetch<T>(
         return res.json();
       }
 
+      const statusCode = res.status;
+      const statusText = res.statusText;
       throw new Error(
-        `Request failed with status code ${res.status} (${res.statusText})`
+        `Request failed with status code ${res.status}${
+          statusText ? ` (${statusText})` : ""
+        }`
       );
     })
     .catch((err: any) => {

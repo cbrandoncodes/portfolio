@@ -30,8 +30,6 @@ export default function Header() {
   const [navOpen, setNavOpen] = useState(false);
   const [isWhite, setIsWhite] = useState(false);
 
-  console.log("theme: ", theme);
-
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrollYPos(latest);
     latest < scrollYPos ? setScrollDir("up") : setScrollDir("down");

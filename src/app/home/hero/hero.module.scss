@@ -43,7 +43,7 @@ html[data-theme="light"] {
     .shine-container {
       position: absolute;
       left: calc(50% + 100px);
-      top: calc(50% - 30vh);
+      top: calc(50% - 29vh);
       transform: translateX(-50%) translateY(-50%);
       animation: side-ways 1.5s cubic-bezier(0.49, 0.35, 0.58, 0.83) infinite
         alternate;

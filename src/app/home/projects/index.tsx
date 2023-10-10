@@ -83,9 +83,9 @@ export default function HomeProjects() {
               variants={rightLeft(0, "50px")}
               className={projectsStyles.work}
             >
-              <div
+              <Link
+                href={`/project/${slug(name)}`}
                 className={projectsStyles["work-img"]}
-                onClick={() => router.push(`/project/${slug(name)}`)}
               >
                 <Image
                   src={image}
@@ -94,7 +94,7 @@ export default function HomeProjects() {
                   height={600}
                   sizes="100vw"
                 />
-              </div>
+              </Link>
               <div className={projectsStyles["work-meta"]}>
                 <h3 className={clsx(projectsStyles["work-title"], "text-2xl")}>
                   {name}

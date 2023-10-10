@@ -49,9 +49,6 @@ export default function RootLayout({
 }) {
   return (
     <html data-theme="light" lang="en" suppressHydrationWarning>
-      {/* <head>
-        <meta name="color-scheme" content="light only" />
-      </head> */}
       <body
         className={clsx(
           "custom-scroll",

@@ -4,6 +4,7 @@ import { headerFadeIn, slideIn } from "@/utils/variants";
 import { navLinks } from "@/data";
 import { AnimatePresence, LazyMotion, domAnimation, m } from "framer-motion";
 import Link from "next/link";
+import { useEffect } from "react";
 
 type MobileHeaderProps = {
   open: boolean;
@@ -11,6 +12,31 @@ type MobileHeaderProps = {
 };
 
 export default function MobileHeader({ open, setOpen }: MobileHeaderProps) {
+  useEffect(() => {
+    const navItems = document.querySelectorAll(
+      `.${mobileHeaderStyles["nav-item"]} a`
+    );
+
+    const handleButtonHover = () => {
+      document.querySelector(".cursor")?.classList.add("hover");
+    };
+    const handleButtonLeave = () => {
+      document.querySelector(".cursor")?.classList.remove("hover");
+    };
+
+    navItems.forEach((button) => {
+      button.addEventListener("mouseover", handleButtonHover);
+      button.addEventListener("mouseleave", handleButtonLeave);
+    });
+
+    return () => {
+      navItems.forEach((button) => {
+        button?.removeEventListener("mouseover", handleButtonHover);
+        button?.removeEventListener("mouseleave", handleButtonLeave);
+      });
+    };
+  }, [open]);
+
   return (
     <LazyMotion features={domAnimation}>
       <AnimatePresence>

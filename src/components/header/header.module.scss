@@ -46,7 +46,11 @@ html[data-theme="dark"] {
           background-color: #fff;
           background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyODggMjg4Ij48ZyBzdHlsZT0iaXNvbGF0aW9uOmlzb2xhdGUiPjxnIGlkPSJBUlRCT0FSRF8xIiBkYXRhLW5hbWU9IkFSVEJPQVJEIDEiPjxjaXJjbGUgY3g9IjE0NS4yNyIgY3k9IjE0NS4yNyIgcj0iMTQyLjczIiBmaWxsPSIjZmFmYmZiIi8+PGNpcmNsZSBjeD0iNTUuNDciIGN5PSI5NC4xOCIgcj0iMjIuNDciIGZpbGw9IiNlMGUwZTAiLz48cGF0aCBkPSJNMzQuOTIgOTYuMWEyMi40NyAyMi40NyAwIDAxMzcuMzctMTYuODFBMjIuNDYgMjIuNDYgMCAxMDQwLjU4IDExMWEyMi4zNyAyMi4zNyAwIDAxLTUuNjYtMTQuOXoiIGZpbGw9IiNiZGJkYmQiLz48cGF0aCBkPSJNNTYuMzYgNzEuNzFoLS40NUEyMi40NyAyMi40NyAwIDExMzMgOTQuNjJ2LjQ1YTIzLjM2IDIzLjM2IDAgMTAyMy4zNi0yMy4zNnoiIGZpbGw9IiNmNWY1ZjUiLz48Y2lyY2xlIGN4PSIyMDQuNjkiIGN5PSI1NC44MiIgcj0iMTEuMjMiIGZpbGw9IiNlMGUwZTAiLz48cGF0aCBkPSJNMTk0LjQyIDU1Ljc4YTExLjIzIDExLjIzIDAgMDExOC42OC04LjQxIDExLjIzIDExLjIzIDAgMTAtMTUuODYgMTUuODUgMTEuMjEgMTEuMjEgMCAwMS0yLjgyLTcuNDR6IiBmaWxsPSIjYmRiZGJkIi8+PHBhdGggZD0iTTIwNS4xMyA0My41OGgtLjIyQTExLjIzIDExLjIzIDAgMTExOTMuNDYgNTV2LjIyYTExLjY4IDExLjY4IDAgMTAxMS42Ny0xMS42OHoiIGZpbGw9IiNmNWY1ZjUiLz48Y2lyY2xlIGN4PSIyNDQiIGN5PSIxNjguNzUiIHI9IjI4LjAzIiBmaWxsPSIjZTBlMGUwIi8+PHBhdGggZD0iTTIxOC4zNyAxNzEuMTVhMjggMjggMCAwMTQ2LjYxLTIxIDI4IDI4IDAgMTAtMzkuNTYgMzkuNTYgMjcuODkgMjcuODkgMCAwMS03LjA1LTE4LjU2eiIgZmlsbD0iI2JkYmRiZCIvPjxwYXRoIGQ9Ik0yNDUuMTEgMTQwLjcyaC0uNTZBMjggMjggMCAxMTIxNiAxNjkuM3YuNTZhMjkuMTQgMjkuMTQgMCAxMDI5LjE0LTI5LjE0eiIgZmlsbD0iI2Y1ZjVmNSIvPjxjaXJjbGUgY3g9IjE2OS4wOSIgY3k9IjIzNC4yNCIgcj0iMjguMDMiIGZpbGw9IiNlMGUwZTAiLz48cGF0aCBkPSJNMTQzLjQ2IDIzNi42NGEyOCAyOCAwIDAxNDYuNjEtMjEgMjggMjggMCAxMC0zOS41NiAzOS41NiAyNy45NCAyNy45NCAwIDAxLTcuMDUtMTguNTZ6IiBmaWxsPSIjYmRiZGJkIi8+PHBhdGggZD0iTTE3MC4yIDIwNi4yMWgtLjU1YTI4IDI4IDAgMTEtMjguNTggMjguNTd2LjU2YTI5LjE0IDI5LjE0IDAgMTAyOS4xNC0yOS4xNHpNMTQzLjMzIDE4NS44MmgtLjE4YTkuNTUgOS41NSAwIDExLTkuNzQgOS43NHYuMTlhOS45NCA5Ljk0IDAgMTA5LjkzLTkuOTR6IiBmaWxsPSIjZjVmNWY1Ii8+PGc+PGNpcmNsZSBjeD0iMjY5Ljg5IiBjeT0iMTI5LjE1IiByPSIxMC44MSIgZmlsbD0iI2UwZTBlMCIvPjxwYXRoIGQ9Ik0yNjAgMTMwLjA3YTEwLjggMTAuOCAwIDAxMTgtOC4wNyAxMC44IDEwLjggMCAxMC0xNS4yNSAxNS4yNSAxMC43NCAxMC43NCAwIDAxLTIuNzUtNy4xOHoiIGZpbGw9IiNiZGJkYmQiLz48cGF0aCBkPSJNMjcwLjMyIDExOC4zNGgtLjIyYTEwLjgxIDEwLjgxIDAgMTEtMTEgMTF2LjIyYTExLjI0IDExLjI0IDAgMTAxMS4yNC0xMS4yNHoiIGZpbGw9IiNmNWY1ZjUiLz48L2c+PGc+PHBhdGggZD0iTTg0LjExIDE0Mi41MmExNC4yNSAxNC4yNSAwIDExLTE0LjI1LTE0LjI0IDE0LjI1IDE0LjI1IDAgMDExNC4yNSAxNC4yNHoiIGZpbGw9IiNlMGUwZTAiLz48cGF0aCBkPSJNNTYuODMgMTQzLjc0YTE0LjI1IDE0LjI1IDAgMDEyMy43LTEwLjY2IDE0LjI1IDE0LjI1IDAgMTAtMjAuMTEgMjAuMTEgMTQuMiAxNC4yIDAgMDEtMy41OS05LjQ1eiIgZmlsbD0iI2JkYmRiZCIvPjxwYXRoIGQ9Ik03MC40MyAxMjguMjhoLS4yOWExNC4yNSAxNC4yNSAwIDExLTE0LjUyIDE0LjUydi4yOWExNC44MSAxNC44MSAwIDEwMTQuODEtMTQuODF6IiBmaWxsPSIjZjVmNWY1Ii8+PC9nPjxnPjxjaXJjbGUgY3g9IjEwMi4yOCIgY3k9IjkwLjU1IiByPSIxMS45NCIgdHJhbnNmb3JtPSJyb3RhdGUoLTQ1IDEwMi4yODc1MDUgOTAuNTUxMTI4KSIgZmlsbD0iI2UwZTBlMCIvPjxwYXRoIGQ9Ik05MS4zNyA5MS41N2ExMS45MyAxMS45MyAwIDAxMTkuODUtOC45MyAxMS45MyAxMS45MyAwIDEwLTE2Ljg1IDE2Ljg0IDExLjg1IDExLjg1IDAgMDEtMy03LjkxeiIgZmlsbD0iI2JkYmRiZCIvPjxwYXRoIGQ9Ik0xMDIuNzUgNzguNjFoLS4yM2ExMS45NCAxMS45NCAwIDExLTEyLjE3IDEyLjE4VjkxYTEyLjQxIDEyLjQxIDAgMTAxMi40LTEyLjQxeiIgZmlsbD0iI2Y1ZjVmNSIvPjwvZz48Zz48Y2lyY2xlIGN4PSI4MC43NyIgY3k9IjIyNS41NiIgcj0iOC4wNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTQ1IDgwLjc3NjQxMyAyMjUuNTUxMzE0KSIgZmlsbD0iI2UwZTBlMCIvPjxwYXRoIGQ9Ik03My40MSAyMjYuMjRhOCA4IDAgMDExMy4zOS02IDguMDUgOC4wNSAwIDEwLTExLjM3IDExLjM2IDguMDYgOC4wNiAwIDAxLTIuMDItNS4zNnoiIGZpbGw9IiNiZGJkYmQiLz48cGF0aCBkPSJNODEuMDkgMjE3LjUxaC0uMTZhOC4wNSA4LjA1IDAgMTEtOC4yIDguMi45Mi45MiAwIDAwMCAuMTYgOC4zNyA4LjM3IDAgMTA4LjM3LTguMzZ6IiBmaWxsPSIjZjVmNWY1Ii8+PC9nPjxwYXRoIGQ9Ik0xNDUuMjcgMjI3LjEzYTE1NC41NSAxNTQuNTUgMCAwMS0xNDIuMi05NHEtLjUxIDYtLjUyIDEyLjEyYTE0Mi43MyAxNDIuNzMgMCAxMDI4NS40NSAwcTAtNi4xMi0uNTItMTIuMTJhMTU0LjU1IDE1NC41NSAwIDAxLTE0Mi4yMSA5NHoiIGZpbGw9IiMyMTIxMjEiIG9wYWNpdHk9Ii4xIiBzdHlsZT0ibWl4LWJsZW5kLW1vZGU6bXVsdGlwbHkiLz48cGF0aCBkPSJNMTQ1LjI3IDI1OS42MkExNTkgMTU5IDAgMDE2LjM1IDE3OC4wOWExNDIuNzUgMTQyLjc1IDAgMDAyNzcuODUgMCAxNTkuMDUgMTU5LjA1IDAgMDEtMTM4LjkzIDgxLjUzeiIgZmlsbD0iIzIxMjEyMSIgb3BhY2l0eT0iLjEiIHN0eWxlPSJtaXgtYmxlbmQtbW9kZTptdWx0aXBseSIvPjwvZz48L2c+PC9zdmc+");
           border: solid 0.1rem gray;
-          transform: translate(calc(2.9rem - 100%)) rotate(180deg);
+          transform: translate(calc(2.5rem - 100%)) rotate(180deg);
+
+          @media screen and (min-width: #{$screen-sm}px) {
+            transform: translate(calc(2.9rem - 100%)) rotate(180deg);
+          }
         }
         &::before {
           background: #d5d5d5;
@@ -75,7 +79,7 @@ html[data-theme="light"] {
 }
 
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   z-index: 20;
@@ -166,8 +170,8 @@ html[data-theme="light"] {
         }
 
         &::before {
-          height: 1.9rem;
-          width: 3.2rem;
+          height: 1.8rem;
+          width: 2.8rem;
           border-radius: 999px;
           border: solid 2px #fff;
           background: radial-gradient(circle, #fff 0, #a8ebfb 100%);
@@ -177,8 +181,8 @@ html[data-theme="light"] {
           position: absolute;
           top: 0.15rem;
           left: 0.15rem;
-          height: 1.6rem;
-          width: 1.6rem;
+          height: 1.5rem;
+          width: 1.5rem;
           border-radius: 50%;
         }
       }
@@ -189,7 +193,7 @@ html[data-theme="light"] {
       align-items: center;
       justify-content: center;
       background: none;
-      margin-left: 1.25rem;
+      margin-left: 1rem;
       padding: 0.5rem;
 
       & > span {
@@ -254,9 +258,25 @@ html[data-theme="light"] {
           }
         }
       }
+    }
 
-      @media screen and (min-width: #{$screen-lg}px) {
+    @media screen and (min-width: #{$screen-sm}px) {
+      .nav-toggle {
         display: none;
+      }
+
+      .theme-toggle {
+        & span {
+          &::before {
+            height: 1.9rem;
+            width: 3.2rem;
+          }
+
+          &::after {
+            height: 1.6rem;
+            width: 1.6rem;
+          }
+        }
       }
     }
 
@@ -265,5 +285,9 @@ html[data-theme="light"] {
         flex: 0.5;
       }
     }
+  }
+
+  @media screen and (min-width: #{$screen-sm}px) {
+    position: fixed;
   }
 }

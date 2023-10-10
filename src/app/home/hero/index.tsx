@@ -41,7 +41,7 @@ export default function HomeHero() {
             className={heroStyles["scroll"]}
             onClick={() => {
               document
-                .querySelector(".expertise")
+                .querySelector("#expertise")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
           >
