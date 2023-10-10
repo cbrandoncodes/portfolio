@@ -3,6 +3,7 @@ import ProjectHero from "./project-hero";
 import ProjectDetails from "./project-details";
 import slug from "slug";
 import { notFound } from "next/navigation";
+import { baseMetadata } from "@/utils/base-metadata";
 
 export default function Project({ params }: { params: { slug: string } }) {
   const work = works.find(({ name }) => slug(name) === params.slug);
@@ -33,10 +34,11 @@ export default function Project({ params }: { params: { slug: string } }) {
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const work = works.find(({ name }) => slug(name) === params.slug);
 
-  return {
-    title: `${work?.name} - Brandon` ?? "Project - Brandon",
-    description: work?.overview ?? "Project - Brandon",
-  };
+  return baseMetadata({
+    title: `${work?.name} - Brandon` ?? "Project",
+    description: work?.overview ?? "Brandon - Project",
+    slug: `/project/${params.slug}`,
+  });
 }
 
 export function generateStaticParams() {

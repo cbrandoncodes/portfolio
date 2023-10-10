@@ -1,13 +1,15 @@
 import contactStyles from "./contact.module.scss";
 
+import { baseMetadata } from "@/utils/base-metadata";
 import ContactForm from "./contact-form";
 import clsx from "clsx";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = baseMetadata({
   title: "Contact - Brandon",
-  description: "Contact - Brandon",
-};
+  description: "Get in touch with Brandon",
+  slug: "/contact",
+});
 
 export default function Contact() {
   return (

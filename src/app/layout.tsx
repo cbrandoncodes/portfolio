@@ -7,6 +7,7 @@ import { PT_Sans, Roboto_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import Script from "next/script";
 import type { Metadata } from "next";
+import { baseMetadata } from "@/utils/base-metadata";
 
 const ptSans = PT_Sans({
   subsets: ["latin"],
@@ -37,10 +38,10 @@ const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
 });
 
-export const metadata: Metadata = {
-  title: "Brandon - Software Developer",
-  description: "Brandon - Software Developer",
-};
+export const metadata: Metadata = baseMetadata({
+  title: "Software Developer - Brandon",
+  description: "Software Developer - Brandon",
+});
 
 export default function RootLayout({
   children,
