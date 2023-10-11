@@ -262,8 +262,6 @@ html[data-theme="light"] {
 
     @media screen and (min-width: #{$screen-sm}px) {
       .nav-toggle {
-        display: none;
-
         &:hover:not(.nav-toggle--open) {
           & > span {
             & span:nth-child(1) {
@@ -294,6 +292,12 @@ html[data-theme="light"] {
     @media screen and (min-width: #{$screen-md}px) {
       & > div {
         flex: 0.5;
+      }
+    }
+
+    @media screen and (min-width: #{$screen-lg}px) {
+      .nav-toggle {
+        display: none;
       }
     }
   }
