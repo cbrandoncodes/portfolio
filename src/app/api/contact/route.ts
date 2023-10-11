@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
     const success = result?.accepted?.[0];
 
     if (!success) {
-      throw new Error("Failed to send verification email");
+      throw new Error("Failed to send message");
     }
 
     return new Response(
