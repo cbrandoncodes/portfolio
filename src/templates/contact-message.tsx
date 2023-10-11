@@ -85,14 +85,3 @@ const headingStyles = {
   lineHeight: "100%",
   margin: "0px",
 };
-
-const buttonStyles = {
-  width: "fit-content",
-  margin: "0 auto",
-  backgroundColor: "#21212E",
-  fontFamily: "Arial,Helvetica,sans-serif",
-  fontSize: "14px",
-  color: "#fff",
-  fontWeight: 500,
-  borderRadius: "10px",
-};
