@@ -38,7 +38,7 @@ export default function HomeHero() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className={heroStyles["scroll"]}
+            className={clsx(heroStyles["scroll"], "button")}
             onClick={() => {
               document
                 .querySelector("#expertise")

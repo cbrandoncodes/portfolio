@@ -5,6 +5,7 @@ import baseLayoutStyles from "./base-layout.module.scss";
 import useDeviceDetect from "@/hooks/use-device-detect";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import clsx from "clsx";
 import { m } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUp } from "lucide-react";
@@ -102,7 +103,7 @@ export default function BaseLayout({
       {!isMobile && <div className="cursor" />}
       <m.button
         ref={toTopRef}
-        className={baseLayoutStyles["to-top"]}
+        className={clsx(baseLayoutStyles["to-top"], "button")}
         animate={{
           opacity: scrollTopButtonVisible ? 1 : 0,
           y: scrollTopButtonVisible ? 0 : 10,
