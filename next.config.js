@@ -9,7 +9,7 @@ const regexEqual = (x, y) =>
   x.multiline === y.multiline;
 
 const nextConfig = {
-  webpack(config) {
+  /*webpack(config) {
     const sassRules = config.module.rules
       .find((rule) => typeof rule.oneOf === "object")
       .oneOf.find(
@@ -43,7 +43,7 @@ const nextConfig = {
     });
 
     return config;
-  },
+  }*/
 };
 
 module.exports = nextConfig;

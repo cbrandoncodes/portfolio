@@ -6,13 +6,12 @@ import { apiFetch } from "@/utils/api";
 import Input from "@/components/ui/input";
 import Textarea from "@/components/ui/textarea";
 import Button from "@/components/ui/button";
-import clsx from "clsx";
 import { SendHorizonal } from "lucide-react";
 import { Toaster, toast } from "sonner";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const schema = yup.object().shape({
   firstName: yup.string().required("Please enter your first name"),
@@ -30,6 +29,31 @@ export default function ContactForm() {
     mode: "onSubmit",
     resolver: yupResolver(schema),
   });
+
+  useEffect(() => {
+    const button = document.querySelector("button[type='submit']");
+
+    const handleButtonHover = () => {
+      document.querySelector(".cursor")?.classList.add("hover");
+    };
+    const handleButtonLeave = () => {
+      document.querySelector(".cursor")?.classList.remove("hover");
+    };
+
+    if (loading) {
+      document.querySelector(".cursor")?.classList.remove("hover");
+      button?.removeEventListener("mouseenter", handleButtonHover);
+      button?.removeEventListener("mouseleave", handleButtonLeave);
+    } else {
+      button?.addEventListener("mouseenter", handleButtonHover);
+      button?.addEventListener("mouseleave", handleButtonLeave);
+    }
+
+    return () => {
+      button?.removeEventListener("mouseenter", handleButtonHover);
+      button?.removeEventListener("mouseleave", handleButtonLeave);
+    };
+  }, [loading]);
 
   async function handleSend(data: any) {
     try {
@@ -155,9 +179,7 @@ export default function ContactForm() {
           <Button
             theme="base"
             type="submit"
-            className={clsx(contactStyles["form-submit"], {
-              button: loading,
-            })}
+            className={contactStyles["form-submit"]}
             disabled={loading}
           >
             <span className="text-sm">{loading ? "Sending..." : "Submit"}</span>{" "}
