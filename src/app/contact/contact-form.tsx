@@ -85,7 +85,7 @@ export default function ContactForm() {
       errors?.[firstKey]?.message ?? "Fix all errors before submitting"
     );
     (
-      document.querySelector(`input[name="${firstKey}"]`) as HTMLInputElement
+      document.querySelector(`*[name="${firstKey}"]`) as HTMLInputElement
     )?.focus();
   }
 
