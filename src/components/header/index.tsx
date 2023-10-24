@@ -214,7 +214,7 @@ export default function Header() {
             <span />
           </label>
           <button
-            name="navigation toggle"
+            aria-label="navigation toggle"
             className={clsx(
               headerStyles["nav-toggle"],
               {

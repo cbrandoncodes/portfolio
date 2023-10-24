@@ -103,7 +103,7 @@ export default function BaseLayout({
       {!isMobile && <div className="cursor" />}
       <m.button
         ref={toTopRef}
-        name="scroll to top"
+        aria-label="scroll to top"
         className={clsx(baseLayoutStyles["to-top"], "button")}
         animate={{
           opacity: scrollTopButtonVisible ? 1 : 0,
