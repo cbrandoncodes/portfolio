@@ -26,8 +26,9 @@ export default function Header() {
   );
   const [navOpen, setNavOpen] = useState(false);
   const [isWhite, setIsWhite] = useState(false);
-
+  const firstRenderRef = useRef(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>();
+
   const [scrollYPos, setScrollYPos] = useState(0);
   const [scrollDir, setScrollDir] = useState<"up" | "down">("down");
   const scrollThreshold = 40;
@@ -36,7 +37,7 @@ export default function Header() {
     : scrollYPos > scrollThreshold && scrollDir === "down";
   const linksCount = navLinks.length;
   let transitionDelay =
-    (!navOpen
+    (!navOpen && firstRenderRef.current
       ? (linksCount >= 1 ? linksCount - 1 : linksCount) * 0.075 + 0.4
       : 0) * 1000;
 
@@ -48,10 +49,13 @@ export default function Header() {
   useEffect(() => {
     timeoutRef.current && clearTimeout(timeoutRef.current);
 
+    if (navOpen) {
+      firstRenderRef.current = true;
+    }
+
     if (!navOpen) {
       timeoutRef.current = setTimeout(() => {
         transitionDelay = 0;
-        console.log("resetting: ", transitionDelay);
       }, transitionDelay + 1000);
     }
   }, [navOpen]);
