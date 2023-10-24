@@ -34,6 +34,7 @@ export default function HomeHero() {
             <span>Full-Stack Developer</span>
           </m.p>
           <m.button
+            name="scroll to next section"
             variants={fadeIn}
             initial="hidden"
             whileInView="visible"

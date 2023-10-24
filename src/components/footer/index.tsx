@@ -24,8 +24,8 @@ export default function Footer() {
               ))}
             </ul>
             <div className={footerStyles.socials}>
-              {contactLinks.map(({ link, icon }, i) => (
-                <a key={i} href={link} target="_blank">
+              {contactLinks.map(({ name, link, icon }, i) => (
+                <a key={i} aria-label={name} href={link} target="_blank">
                   {icon()}
                 </a>
               ))}
