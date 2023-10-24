@@ -52,13 +52,21 @@
         .work-img {
           display: flex;
           width: 100%;
-          overflow: hidden;
           transition: transform 0.25s ease;
+          border-radius: map-get($rounded, "xl") map-get($rounded, "xl") 0 0;
+          border: none;
           cursor: pointer;
+          outline: none;
+          overflow: hidden;
 
           img {
             width: 100%;
             height: auto;
+            border-radius: map-get($rounded, "xl") map-get($rounded, "xl") 0 0;
+          }
+
+          &:focus-visible {
+            outline: none;
           }
 
           &:hover {

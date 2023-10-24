@@ -39,8 +39,8 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = baseMetadata({
-  title: "Software Developer - Brandon",
-  description: "Software Developer - Brandon",
+  title: "Full-Stack Developer - Brandon",
+  description: "Full-Stack - Brandon",
 });
 
 export default function RootLayout({

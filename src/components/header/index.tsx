@@ -6,27 +6,20 @@ import { baseTransition } from "@/utils/variants";
 import { themeStoreKey } from "@/utils";
 import { navLinks } from "@/data";
 import useLocalStorage from "@/hooks/use-local-storage";
+import useDeviceDetect from "@/hooks/use-device-detect";
 import Logo from "@/components/logo";
 import MobileHeader from "./mobile-header";
 import clsx from "clsx";
 import { m, useMotionValueEvent, useScroll } from "framer-motion";
 import { usePathname, useSelectedLayoutSegment } from "next/navigation";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import useDeviceDetect from "@/hooks/use-device-detect";
+import { useEffect, useRef, useState } from "react";
 
 export default function Header() {
   const pathname = usePathname();
   const segment = useSelectedLayoutSegment() ?? "home";
   const { isMobile } = useDeviceDetect();
   const { scrollY } = useScroll();
-  const [scrollYPos, setScrollYPos] = useState(0);
-  const [scrollDir, setScrollDir] = useState<"up" | "down">("down");
-  const scrollThreshold = 40;
-  const hideNav = isMobile
-    ? false
-    : scrollYPos > scrollThreshold && scrollDir === "down";
-
   const [theme, setTheme] = useLocalStorage<"light" | "dark" | null>(
     themeStoreKey,
     "light"
@@ -34,10 +27,34 @@ export default function Header() {
   const [navOpen, setNavOpen] = useState(false);
   const [isWhite, setIsWhite] = useState(false);
 
+  const timeoutRef = useRef<NodeJS.Timeout | null>();
+  const [scrollYPos, setScrollYPos] = useState(0);
+  const [scrollDir, setScrollDir] = useState<"up" | "down">("down");
+  const scrollThreshold = 40;
+  const hideNav = isMobile
+    ? false
+    : scrollYPos > scrollThreshold && scrollDir === "down";
+  const linksCount = navLinks.length;
+  let transitionDelay =
+    (!navOpen
+      ? (linksCount >= 1 ? linksCount - 1 : linksCount) * 0.075 + 0.4
+      : 0) * 1000;
+
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrollYPos(latest);
     latest < scrollYPos ? setScrollDir("up") : setScrollDir("down");
   });
+
+  useEffect(() => {
+    timeoutRef.current && clearTimeout(timeoutRef.current);
+
+    if (!navOpen) {
+      timeoutRef.current = setTimeout(() => {
+        transitionDelay = 0;
+        console.log("resetting: ", transitionDelay);
+      }, transitionDelay + 1000);
+    }
+  }, [navOpen]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -158,7 +175,15 @@ export default function Header() {
     >
       <div className={clsx(headerStyles.container, "container")}>
         <div className={headerStyles.logo}>
-          <Logo />
+          <Logo
+            linkProps={{
+              ...({
+                style: {
+                  transitionDelay: `${transitionDelay}ms`,
+                },
+              } as any),
+            }}
+          />
         </div>
 
         <div>
@@ -195,9 +220,16 @@ export default function Header() {
             onClick={() => setNavOpen((prev) => !prev)}
           >
             <span>
-              <span />
-              <span />
-              <span />
+              {new Array(3).fill(null).map((_, i) => (
+                <span
+                  key={i}
+                  style={{
+                    transition: `background-color 0.2s ease ${
+                      transitionDelay / 1000
+                    }s, right 0.25s ease, left 0.25s ease, border-radius 0.25s ease, width 0.25s ease, height 0.25s ease, transform 0.25s ease`,
+                  }}
+                />
+              ))}
             </span>
           </button>
         </div>

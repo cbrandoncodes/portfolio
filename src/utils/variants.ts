@@ -144,7 +144,6 @@ export const rightLeftContainer = (
 });
 
 export const rightLeft = (delay?: number, xOffset = "100px") => {
-  const args = delay ? { delay: delay } : {};
   return {
     hidden: { opacity: 0, x: xOffset },
     visible: {
@@ -152,7 +151,7 @@ export const rightLeft = (delay?: number, xOffset = "100px") => {
       x: 0,
       transition: {
         ...baseTransition,
-        ...args,
+        delay,
       },
     },
   };
