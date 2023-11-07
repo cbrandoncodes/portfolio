@@ -139,8 +139,9 @@ export default function HomeExpertise() {
                   "text-sm leading-normal"
                 )}
               >
-                I'm skilled at creating scalable mobile applications with React
-                Native and Expo, showcasing a proven track record of expertise.
+                I&lsquo;m skilled at creating scalable mobile applications with
+                React Native and Expo, showcasing a proven track record of
+                expertise.
               </p>
             </div>
           </m.div>
