@@ -59,8 +59,9 @@ export default function HomeExpertise() {
                   "text-sm leading-normal"
                 )}
               >
-                I have strong knowledge of functional programming and OOP. I
-                have experience with Java, JavaScript, TypeScript, and Rust.
+                I have a robust understanding of both functional programming and
+                object-oriented programming, demonstrated through practical
+                expertise in Kotlin, JavaScript, and TypeScript.
               </p>
             </div>
           </m.div>
@@ -100,8 +101,8 @@ export default function HomeExpertise() {
                   "text-sm leading-normal"
                 )}
               >
-                I build eye-catching UIs with JavaScript, JavaScript frameworks
-                including React.js, Next.js, Gatsby.js and more.
+                I build eye-catching UIs with HTML, css, JavaScript frameworks
+                including React.js, Next.js, and Gatsby.js.
               </p>
             </div>
           </m.div>
@@ -138,8 +139,8 @@ export default function HomeExpertise() {
                   "text-sm leading-normal"
                 )}
               >
-                I have strong experience building scalable mobile applications
-                with React Native and Expo.
+                I'm skilled at creating scalable mobile applications with React
+                Native and Expo, showcasing a proven track record of expertise.
               </p>
             </div>
           </m.div>
