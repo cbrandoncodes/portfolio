@@ -82,6 +82,36 @@ export const works: Work[] = [
     ],
     year: 2023,
   },
+  {
+    name: "Artium Deus",
+    details: [
+      `This is a full-stack Next.js website I developed for Artium Deus, an online store for travertine furnitures.`,
+    ],
+    overview: "Raw is real.",
+    link: "https://artiumdeus.com",
+    image: "/assets/images/artium-deus.png",
+    images: [
+      "/assets/images/artium-deus-1.png",
+      "/assets/images/artium-deus-2.png",
+    ],
+    technologies: [
+      "Next.js 14",
+      "Payload CMS",
+      "Stripe",
+      "Tailwind CSS",
+      "TypeScript",
+      "Vercel",
+    ],
+    scope: [
+      "Full-Stack Development",
+      "Front-End Development",
+      "CMS Integration",
+      "API Integration",
+      "Responsive Design",
+      "SEO",
+    ],
+    year: 2023,
+  },
   /*{
     name: "Manners and Groove",
     meta: {
