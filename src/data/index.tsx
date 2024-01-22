@@ -53,6 +53,63 @@ export const works: Work[] = [
     year: 2023,
   },
   {
+    name: "Artium Deus",
+    details: [
+      `This is a Next.js website I developed for Artium Deus, an online store for travertine furnitures.`,
+    ],
+    overview: "Raw is real.",
+    link: "https://artiumdeus.com",
+    image: "/assets/images/artium-deus.png",
+    images: [
+      "/assets/images/artium-deus-1.png",
+      "/assets/images/artium-deus-2.png",
+    ],
+    technologies: [
+      "Next.js 14",
+      "Payload CMS",
+      "Stripe",
+      "Tailwind CSS",
+      "TypeScript",
+      "Vercel",
+    ],
+    scope: [
+      "Full-Stack Development",
+      "Front-End Development",
+      "CMS Integration",
+      "API Integration",
+      "Responsive Design",
+      "SEO",
+    ],
+    year: 2023,
+  },
+  {
+    name: "Manners and Groove",
+    details: [
+      `This is an e-commerce website I developed for Manners and Groove, a streetwear brand.`,
+    ],
+    overview: "New dimension streewear clothing",
+    link: "https://mannersandgroove.com",
+    image: "/assets/images/m_g.png",
+    images: ["/assets/images/m_g-1.png", "/assets/images/m_g-2.png"],
+    technologies: [
+      "Next.js 14",
+      "Payload CMS",
+      "Paystack",
+      "Tailwind CSS",
+      "TypeScript",
+      "Vercel",
+    ],
+    scope: [
+      "Full-Stack Development",
+      "Payment Processing",
+      "CMS Development",
+      "API Integration",
+      "Responsive Design",
+      "SEO",
+    ],
+    year: 2022,
+  },
+  {
     name: "Sunny Side Up",
     details: [
       `Sunny Side Up is a brand agency based in Singapore.`,
@@ -82,51 +139,6 @@ export const works: Work[] = [
     ],
     year: 2023,
   },
-  {
-    name: "Artium Deus",
-    details: [
-      `This is a full-stack Next.js website I developed for Artium Deus, an online store for travertine furnitures.`,
-    ],
-    overview: "Raw is real.",
-    link: "https://artiumdeus.com",
-    image: "/assets/images/artium-deus.png",
-    images: [
-      "/assets/images/artium-deus-1.png",
-      "/assets/images/artium-deus-2.png",
-    ],
-    technologies: [
-      "Next.js 14",
-      "Payload CMS",
-      "Stripe",
-      "Tailwind CSS",
-      "TypeScript",
-      "Vercel",
-    ],
-    scope: [
-      "Full-Stack Development",
-      "Front-End Development",
-      "CMS Integration",
-      "API Integration",
-      "Responsive Design",
-      "SEO",
-    ],
-    year: 2023,
-  },
-  /*{
-    name: "Manners and Groove",
-    meta: {
-      description: "Manners and Groove is a streetwear clothing brand.",
-      url: "https://mannersandgroove.com",
-      image: "/assets/images/manners-and-groove.png",
-      technologies: [
-        "Next.js",
-        "Redux",
-        "Tailwind CSS",
-        "TypeScript",
-        "Flutterwave",
-      ],
-    },
-  },*/
   /*{
     name: "Wrcked",
     meta: {
@@ -136,7 +148,7 @@ export const works: Work[] = [
       technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Stripe"],
     },
   },*/
-  {
+  /*{
     name: "Chavalit Tsao",
     details: [
       `This is a website for Chavalit Tsao, a family business steward and chairman of IMC Pan Asia Alliance Group.`,
@@ -158,7 +170,7 @@ export const works: Work[] = [
       "SEO",
     ],
     year: 2023,
-  },
+  }*/
 ];
 
 export const testimonials = [

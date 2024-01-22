@@ -77,37 +77,41 @@ export default function HomeProjects() {
           viewport={{ once: true }}
           className={projectsStyles.works}
         >
-          {works.map(({ name, image, link }, i) => (
-            <m.div
-              key={i}
-              variants={rightLeft(0, "50px")}
-              className={projectsStyles.work}
-            >
-              <Link
-                href={`/project/${slug(name)}`}
-                className={projectsStyles["work-img"]}
+          {works.map(({ name, image, link }, i) => {
+            const projectLink = `/project/${slug(name)}`;
+
+            return (
+              <m.div
+                key={i}
+                variants={rightLeft(0, "50px")}
+                className={projectsStyles.work}
               >
-                <Image
-                  src={image}
-                  alt={name}
-                  width={600}
-                  height={600}
-                  sizes="100vw"
-                />
-              </Link>
-              <div className={projectsStyles["work-meta"]}>
-                <h3 className={clsx(projectsStyles["work-title"], "text-2xl")}>
-                  {name}
-                </h3>
-                <Link
-                  href={link}
-                  className={clsx(projectsStyles["work-link"], "text-md")}
-                >
-                  View Work <ArrowUpRight size={14} strokeWidth={2.5} />
+                <Link href={projectLink} className={projectsStyles["work-img"]}>
+                  <Image
+                    src={image}
+                    alt={name}
+                    width={600}
+                    height={600}
+                    sizes="100vw"
+                  />
                 </Link>
-              </div>
-            </m.div>
-          ))}
+                <div className={projectsStyles["work-meta"]}>
+                  <Link
+                    href={projectLink}
+                    className={clsx(projectsStyles["work-title"], "text-2xl")}
+                  >
+                    {name}
+                  </Link>
+                  <Link
+                    href={link}
+                    className={clsx(projectsStyles["work-link"], "text-md")}
+                  >
+                    View Work <ArrowUpRight size={14} strokeWidth={2.5} />
+                  </Link>
+                </div>
+              </m.div>
+            );
+          })}
         </m.div>
       </div>
     </section>
