@@ -1,3 +1,4 @@
+import Upwork from "@/svgs/upwork";
 import { Work } from "@/types";
 import { Github, Linkedin, MailIcon } from "lucide-react";
 
@@ -225,6 +226,11 @@ export const contactLinks = [
     name: "LinkedIn",
     link: "https://linkedin.com/in/brandon-chikezie-31708823b",
     icon: () => <Linkedin size={20} strokeWidth={2} />,
+  },
+  {
+    name: "Upwork",
+    link: "https://www.upwork.com/freelancers/~010506150fd44bc884",
+    icon: () => <Upwork width={20} className="w-5 h-auto" />,
   },
 ];
 
