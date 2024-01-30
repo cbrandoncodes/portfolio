@@ -102,12 +102,13 @@ export default function HomeProjects() {
                   >
                     {name}
                   </Link>
-                  <Link
+                  <a
                     href={link}
+                    target="_blank"
                     className={clsx(projectsStyles["work-link"], "text-md")}
                   >
                     View Work <ArrowUpRight size={14} strokeWidth={2.5} />
-                  </Link>
+                  </a>
                 </div>
               </m.div>
             );
