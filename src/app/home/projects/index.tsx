@@ -67,7 +67,7 @@ export default function HomeProjects() {
             viewport={{ once: true }}
             className={clsx(projectsStyles["sub-heading"], "font-mono text-md")}
           >
-            Here&apos;s a list of some of my recent works
+            Here are some of my recent works
           </m.p>
         </div>
         <m.div

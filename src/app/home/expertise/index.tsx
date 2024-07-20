@@ -101,7 +101,7 @@ export default function HomeExpertise() {
                   "text-sm leading-normal"
                 )}
               >
-                I build eye-catching UIs with HTML, css, JavaScript frameworks
+                I build eye-catching UIs with HTML, CSS, JavaScript frameworks
                 including React.js, Next.js, and Gatsby.js.
               </p>
             </div>
@@ -139,9 +139,8 @@ export default function HomeExpertise() {
                   "text-sm leading-normal"
                 )}
               >
-                I&lsquo;m skilled at creating scalable mobile applications with
-                React Native and Expo, showcasing a proven track record of
-                expertise.
+                I build scalable mobile applications with React Native and Expo,
+                showcasing a proven track record of expertise.
               </p>
             </div>
           </m.div>

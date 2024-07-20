@@ -29,8 +29,8 @@ export default function HomeHero() {
             viewport={{ once: true }}
             className={clsx(heroStyles["sub-heading"], "font-mono")}
           >
-            <span>Software Developer</span>
-            <span>|</span>
+            {/* <span>Software Developer</span>
+            <span>|</span> */}
             <span>Full-Stack Developer</span>
           </m.p>
           <m.button
