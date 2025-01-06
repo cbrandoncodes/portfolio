@@ -3,7 +3,7 @@
 
 .textarea {
   width: 100%;
-  height: 70px;
+  height: 100px;
   background: none;
   color: var(--zinc-light);
   font-family: $font-mono;
@@ -12,6 +12,7 @@
   border-color: var(--zinc-light);
   line-height: map-get($leading, "snug");
   padding: 1.5rem 0;
+  resize: none;
   transition: all 0.2s ease;
 
   &.textarea--error {

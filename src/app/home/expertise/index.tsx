@@ -2,7 +2,7 @@
 
 import expStyles from "./expertise.module.scss";
 
-import { bottomIn, rightLeft, rightLeftContainer } from "@/utils/variants";
+import { bottomIn, bottomInContainer } from "@/utils/variants";
 import clsx from "clsx";
 import { m } from "framer-motion";
 
@@ -17,17 +17,17 @@ export default function HomeExpertise() {
           viewport={{ once: true }}
           className={clsx(expStyles.heading, "text-6xl")}
         >
-          My Expertise
+          Expertise
         </m.h2>
         <m.div
-          variants={rightLeftContainer(0, 0.1, "50px")}
+          variants={bottomInContainer()}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           className={expStyles.content}
         >
           <m.div
-            variants={rightLeft(0, "50px")}
+            variants={bottomIn(0, 20)}
             className={expStyles["content-box"]}
           >
             <div>
@@ -66,7 +66,7 @@ export default function HomeExpertise() {
             </div>
           </m.div>
           <m.div
-            variants={rightLeft(0, "50px")}
+            variants={bottomIn(0, 20)}
             className={expStyles["content-box"]}
           >
             <div>
@@ -92,7 +92,7 @@ export default function HomeExpertise() {
                   </svg>
                 </span>
                 <h3 className={clsx(expStyles["content-title"], "text-3xl")}>
-                  Front-End Development
+                  Full-Stack Development
                 </h3>
               </div>
               <p
@@ -101,13 +101,14 @@ export default function HomeExpertise() {
                   "text-sm leading-normal"
                 )}
               >
-                I build eye-catching UIs with HTML, CSS, JavaScript frameworks
-                including React.js, Next.js, and Gatsby.js.
+                I build scalable full-stack applications with modern tools /
+                tech including Nest.js, Deno, Node.js, PostgreSQL, Redis, AWS
+                and more.
               </p>
             </div>
           </m.div>
           <m.div
-            variants={rightLeft(0, "50px")}
+            variants={bottomIn(0, 20)}
             className={expStyles["content-box"]}
           >
             <div>

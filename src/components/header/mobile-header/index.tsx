@@ -51,11 +51,7 @@ export default function MobileHeader({ open, setOpen }: MobileHeaderProps) {
             <ul className={mobileHeaderStyles["nav-items"]}>
               {navLinks.map(({ href, name }, i) => (
                 <li key={i} className={mobileHeaderStyles["nav-item"]}>
-                  <Link
-                    href={href}
-                    className="font-serif"
-                    onClick={() => setOpen(false)}
-                  >
+                  <Link href={href} onClick={() => setOpen(false)}>
                     <m.span
                       variants={slideIn((i + 1) * 0.075)}
                       initial="hidden"

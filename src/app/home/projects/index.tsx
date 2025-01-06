@@ -2,7 +2,7 @@
 
 import projectsStyles from "./projects.module.scss";
 
-import { bottomIn, rightLeft, rightLeftContainer } from "@/utils/variants";
+import { bottomIn, bottomInContainer } from "@/utils/variants";
 import { works } from "@/data";
 import clsx from "clsx";
 import { ArrowUpRight } from "lucide-react";
@@ -58,7 +58,7 @@ export default function HomeProjects() {
             viewport={{ once: true }}
             className={clsx(projectsStyles.heading, "text-6xl")}
           >
-            My Projects
+            Featured Projects
           </m.h2>
           <m.p
             variants={bottomIn()}
@@ -71,7 +71,7 @@ export default function HomeProjects() {
           </m.p>
         </div>
         <m.div
-          variants={rightLeftContainer(0, 0.1, "50px")}
+          variants={bottomInContainer()}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -83,7 +83,7 @@ export default function HomeProjects() {
             return (
               <m.div
                 key={i}
-                variants={rightLeft(0, "50px")}
+                variants={bottomIn(0)}
                 className={projectsStyles.work}
               >
                 <Link href={projectLink} className={projectsStyles["work-img"]}>
@@ -107,7 +107,7 @@ export default function HomeProjects() {
                     target="_blank"
                     className={clsx(projectsStyles["work-link"], "text-md")}
                   >
-                    View Work <ArrowUpRight size={14} strokeWidth={2.5} />
+                    View Project <ArrowUpRight size={14} strokeWidth={2.5} />
                   </a>
                 </div>
               </m.div>

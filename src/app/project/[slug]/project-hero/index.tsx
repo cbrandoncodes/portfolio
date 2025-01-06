@@ -2,7 +2,7 @@
 
 import projectHeroStyles from "./project-hero.module.scss";
 
-import { bottomIn, rightLeft, rightLeftContainer } from "@/utils/variants";
+import { bottomIn, bottomInContainer } from "@/utils/variants";
 import { ArrowLeft, MoveRight } from "lucide-react";
 import clsx from "clsx";
 import { m } from "framer-motion";
@@ -45,7 +45,7 @@ export default function ProjectHero({
             <span className="font-mono text-sm">Back</span>
           </m.button>
           <div className={projectHeroStyles.content}>
-            <m.div>
+            <div>
               <m.span
                 variants={bottomIn(0, 10)}
                 initial="hidden"
@@ -64,7 +64,7 @@ export default function ProjectHero({
                   {overview}
                 </m.span>
               )}
-            </m.div>
+            </div>
             <m.span
               variants={bottomIn(0, 10)}
               initial="hidden"
@@ -114,7 +114,7 @@ export default function ProjectHero({
               initial={{ width: "0%" }}
               whileInView={{ width: "100%" }}
               transition={{
-                duration: 1.25,
+                duration: 1.2,
                 delay: 0.25,
                 type: "spring",
                 bounce: 0,
@@ -125,7 +125,7 @@ export default function ProjectHero({
             <div className={projectHeroStyles.scope}>
               <div>
                 <m.h3
-                  variants={bottomIn(0.25, 0)}
+                  variants={bottomIn()}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
@@ -134,14 +134,14 @@ export default function ProjectHero({
                   Scope
                 </m.h3>
                 <m.ul
-                  variants={rightLeftContainer(0.4, 0.1, "50px")}
+                  variants={bottomInContainer(0, 0.2)}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   className="font-mono text-xs"
                 >
                   {scope.map((item, i) => (
-                    <m.li key={i} variants={rightLeft(0, "50px")}>
+                    <m.li key={i} variants={bottomIn()}>
                       <MoveRight size={12} strokeWidth={2} />
                       {item}
                     </m.li>
@@ -150,7 +150,7 @@ export default function ProjectHero({
               </div>
               <div>
                 <m.h3
-                  variants={bottomIn(0.25, 0)}
+                  variants={bottomIn()}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
@@ -159,14 +159,14 @@ export default function ProjectHero({
                   Tech
                 </m.h3>
                 <m.ul
-                  variants={rightLeftContainer(0.4, 0.1, "50px")}
+                  variants={bottomInContainer(0, 0.2)}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   className="font-mono text-xs"
                 >
                   {technologies.map((item, i) => (
-                    <m.li key={i} variants={rightLeft(0, "50px")}>
+                    <m.li key={i} variants={bottomIn()}>
                       <MoveRight size={12} strokeWidth={2} />
                       {item}
                     </m.li>

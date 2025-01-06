@@ -3,7 +3,12 @@
 import testimonialsStyles from "./testimonials.module.scss";
 
 import { socials, testimonials } from "@/data";
-import { bottomIn, rightLeft, rightLeftContainer } from "@/utils/variants";
+import {
+  bottomIn,
+  bottomInContainer,
+  fadeIn,
+  fadeInContainer,
+} from "@/utils/variants";
 import clsx from "clsx";
 import { Quote } from "lucide-react";
 import { m } from "framer-motion";
@@ -14,10 +19,16 @@ export default function HomeTestimonials() {
     <div id="testimonials" className={testimonialsStyles.testimonials}>
       <div className={clsx("container", testimonialsStyles.container)}>
         <div className={testimonialsStyles["content"]}>
-          <div className={testimonialsStyles.contact}>
+          <m.div
+            variants={bottomIn()}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className={testimonialsStyles.contact}
+          >
             <div className={testimonialsStyles["contact-header"]}>
               <m.h2
-                variants={bottomIn(0, 0)}
+                variants={fadeIn}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -29,7 +40,7 @@ export default function HomeTestimonials() {
                 Available for contract projects
               </m.h2>
               <m.h3
-                variants={bottomIn(0, 0)}
+                variants={fadeIn}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -45,34 +56,37 @@ export default function HomeTestimonials() {
                   className="link font-mono"
                 >
                   <span>email</span>
-                </Link>{" "}
-                or any of my social media profiles below.
+                </Link>
+                .
               </m.h3>
             </div>
             <m.ul
-              variants={rightLeftContainer(0, 0.1, "25px")}
+              variants={fadeInContainer(0, 0.2)}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               className={testimonialsStyles["socials"]}
             >
               {socials.map(({ name, url }, i) => (
-                <m.li variants={rightLeft(0, "25px")} key={i}>
+                <m.li variants={fadeIn} key={i}>
                   <Link href={url} target="_blank" className="text-sm">
                     {name}
                   </Link>
                 </m.li>
               ))}
             </m.ul>
-          </div>
-          <div className={testimonialsStyles["testimonials-list"]}>
+          </m.div>
+          <m.div
+            variants={bottomInContainer()}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className={testimonialsStyles["testimonials-list"]}
+          >
             {testimonials.map(({ name, role, testimonial }, i) => (
               <m.div
                 key={i}
-                variants={bottomIn(0, 0)}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
+                variants={bottomIn()}
                 className={testimonialsStyles["testimonial"]}
               >
                 <div className={testimonialsStyles["testimonial-header"]}>
@@ -89,7 +103,7 @@ export default function HomeTestimonials() {
                 </div>
               </m.div>
             ))}
-          </div>
+          </m.div>
         </div>
       </div>
     </div>

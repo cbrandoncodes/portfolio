@@ -18,17 +18,28 @@ export const heightUp = (delay?: number) => {
   };
 };
 
-export const heightUpContainer = (delay?: number, stagger?: number) => ({
+export const heightUpContainer = (delay = 0, stagger = 0.15) => ({
   hidden: {
     transition: {
-      staggerChildren: stagger ?? 0.15,
-      delayChildren: delay ?? 0,
+      staggerChildren: stagger,
+      delayChildren: delay,
     },
   },
   visible: {
     transition: {
-      staggerChildren: stagger ?? 0.15,
-      delayChildren: delay ?? 0,
+      staggerChildren: stagger,
+      delayChildren: delay,
+    },
+  },
+});
+
+export const fadeInContainer = (delay = 0.25, stagger = 0.3) => ({
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: stagger,
+      delayChildren: delay,
     },
   },
 });
@@ -69,7 +80,7 @@ export const slideInContainer = (delay = 0) => ({
     opacity: 1,
     transition: {
       staggerChildren: 0.2,
-      delayChildren: delay ?? 0,
+      delayChildren: delay,
     },
   },
 });
@@ -110,48 +121,28 @@ export const slideIn = (
   },
 });
 
-export const bottomIn = (delay?: number, x = 20) => {
+export const bottomInContainer = (delay = 0.25, stagger = 0.3) => ({
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: stagger,
+      delayChildren: delay,
+    },
+  },
+});
+
+export const bottomIn = (delay = 0, y = 50) => {
   const args = delay ? { delay: delay } : {};
   return {
-    hidden: { opacity: 0, x: `${x}px`, y: "60px", scale: 1.025 },
+    hidden: { opacity: 0, y: `${y}px`, scale: 1.0125 },
     visible: {
       opacity: 1,
-      x: 0,
       y: 0,
       scale: 1,
       transition: {
         ...baseTransition,
         ...args,
-      },
-    },
-  };
-};
-
-export const rightLeftContainer = (
-  delay?: number,
-  stagger?: number,
-  xOffset = "100px"
-) => ({
-  hidden: { opacity: 0, x: xOffset },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      staggerChildren: stagger ?? 0.1,
-      delayChildren: delay ?? 0,
-    },
-  },
-});
-
-export const rightLeft = (delay?: number, xOffset = "100px") => {
-  return {
-    hidden: { opacity: 0, x: xOffset },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        ...baseTransition,
-        delay,
       },
     },
   };

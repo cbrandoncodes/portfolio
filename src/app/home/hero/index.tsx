@@ -2,7 +2,7 @@
 
 import heroStyles from "./hero.module.scss";
 
-import { bottomIn, fadeIn } from "@/utils/variants";
+import { fadeIn, fadeInContainer } from "@/utils/variants";
 import buttonAnimation from "@/lotties/button.json";
 import clsx from "clsx";
 import Lottie from "lottie-react";
@@ -20,25 +20,32 @@ export default function HomeHero() {
           </div>
         </div>
 
-        <div className={clsx(heroStyles.main)}>
-          <h1 className={clsx(heroStyles.heading, "font-sans")}>BRANDON</h1>
+        <m.div
+          variants={fadeInContainer(0, 0.2)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className={clsx(heroStyles.main)}
+        >
+          <m.h1
+            variants={fadeIn}
+            className={clsx(heroStyles.heading, "font-sans")}
+          >
+            I&apos;M BRANDON
+          </m.h1>
           <m.p
-            variants={bottomIn()}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            variants={fadeIn}
             className={clsx(heroStyles["sub-heading"], "font-mono")}
           >
-            {/* <span>Software Developer</span>
-            <span>|</span> */}
-            <span>Full-Stack Developer</span>
+            <span>Software Developer</span>
+            <span>|</span>
+            <span>Open Source / Web3 Enthusiast</span>
+            <span>|</span>
+            <span>Problem Solver</span>
           </m.p>
           <m.button
             aria-label="scroll to next section"
             variants={fadeIn}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
             className={clsx(heroStyles["scroll"], "button")}
             onClick={() => {
               document
@@ -48,7 +55,7 @@ export default function HomeHero() {
           >
             <Lottie animationData={buttonAnimation} loop size={20} />
           </m.button>
-        </div>
+        </m.div>
       </div>
     </section>
   );

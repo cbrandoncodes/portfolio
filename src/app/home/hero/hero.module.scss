@@ -97,6 +97,7 @@ html[data-theme="light"] {
         color: #e5e5e5;
         letter-spacing: 0.5px;
         margin-bottom: 1rem;
+        text-align: center;
       }
 
       .sub-heading {
@@ -108,7 +109,7 @@ html[data-theme="light"] {
         text-transform: uppercase;
         letter-spacing: 0.5px;
 
-        & span:not(span:nth-child(3)) {
+        & span:not(span:nth-child(1)) {
           display: none;
         }
       }
@@ -136,7 +137,7 @@ html[data-theme="light"] {
           font-size: getFontSize(map-get($font-steps, "lg"));
           gap: 1.25rem;
 
-          & span:not(span:nth-child(3)) {
+          & span:not(span:nth-child(1)) {
             display: inline;
           }
         }

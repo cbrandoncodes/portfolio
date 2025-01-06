@@ -104,13 +104,13 @@ export default function BaseLayout({
       <m.button
         ref={toTopRef}
         aria-label="scroll to top"
-        className={clsx(baseLayoutStyles["to-top"], "button")}
         animate={{
           opacity: scrollTopButtonVisible ? 1 : 0,
           y: scrollTopButtonVisible ? 0 : 10,
           pointerEvents: scrollTopButtonVisible ? "all" : "none",
         }}
         transition={{ duration: 0.2 }}
+        className={clsx(baseLayoutStyles["to-top"], "button")}
         onClick={() => {
           window.scrollTo({
             top: 0,

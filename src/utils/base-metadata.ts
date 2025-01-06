@@ -14,13 +14,14 @@ export function baseMetadata({
 }): Metadata {
   const defTitle = "Brandon";
   const defDescription =
-    "Hi, I'm Brandon Chikezie. I am a Full-Stack Developer. I build accessible and scalable web applications.";
+    "Hi, I'm Brandon Chikezie. I am a Full-Stack Developer. I build accessible and scalable applications.";
   const pageTitle = title || defTitle;
   const pageDescription = description || defDescription;
 
   return {
     title: pageTitle,
     description: pageDescription,
+    metadataBase: new URL(appUrl),
     keywords: [
       "Brandon Chikezie",
       "Obinna Chikezie",
@@ -45,9 +46,9 @@ export function baseMetadata({
       title: pageTitle,
       images: [
         {
-          url: "/assets/images/base.png",
-          width: 1465,
-          height: 930,
+          url: "/assets/images/base.jpg",
+          width: 2295,
+          height: 1523,
         },
       ],
     },
@@ -56,19 +57,21 @@ export function baseMetadata({
       type: "website",
       title: pageTitle,
       description: pageDescription,
-      ...(slug !== undefined && { slug: `${appUrl}${slug ?? ""}` }),
-      ...(image && {
-        images: [
-          {
-            url: "/assets/images/base.png",
-            width: 1465,
-            height: 930,
-          },
-          {
-            url: image,
-          },
-        ],
-      }),
+      ...(!!slug && { slug: `${appUrl}${slug ?? ""}` }),
+      images: [
+        {
+          url: "/assets/images/base.jpg",
+          width: 2295,
+          height: 1523,
+        },
+        ...(!!image
+          ? [
+              {
+                url: image,
+              },
+            ]
+          : []),
+      ],
     },
   };
 }
