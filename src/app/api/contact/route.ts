@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
       `${firstName} ${lastName}`,
       message
     );
-    const success = result?.accepted?.[0];
+    const success = !!result?.MessageId;
 
     if (!success) {
       throw new Error("Failed to send message");

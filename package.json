@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-ses": "^3.723.0",
     "@hookform/resolvers": "^3.3.1",
     "@react-email/button": "^0.0.10",
     "@react-email/components": "^0.0.7",

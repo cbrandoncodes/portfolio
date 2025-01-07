@@ -92,9 +92,10 @@ export default function ContactForm() {
   return (
     <>
       <Toaster
-        position="bottom-right"
+        position="bottom-center"
         toastOptions={{
-          className: "text-gray-500",
+          className: "text-base text-zinc-light",
+          duration: 5000,
         }}
       />
       <div className={contactStyles["form-container"]}>

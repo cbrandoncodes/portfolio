@@ -1,36 +1,42 @@
 import ContactMessage from "@/templates/contact-message";
 import { render } from "@react-email/render";
-import nodemailer from "nodemailer";
+import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 
 export async function sendContactMessage(
   email: string,
   name: string,
   message: string
 ) {
-  const transporter = nodemailer.createTransport({
-    host: process.env.FROM_EMAIL_SMTP,
-    port: parseInt(process.env.FROM_EMAIL_PORT ?? "587"),
-    secure: true,
-    service: "Outlook365",
-    auth: {
-      user: process.env.FROM_EMAIL,
-      pass: process.env.FROM_EMAIL_PASSWORD,
+  const sesClient = new SESClient({
+    region: process.env.AWS_REGION!,
+    credentials: {
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID!,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY!,
     },
   });
 
   const emailHtml = render(
     <ContactMessage message={message} name={name} email={email} />
   );
-
-  const options = {
-    from: {
-      name: "My Portfolio",
-      address: process.env.FROM_EMAIL!,
+  const sendEmailCommand = new SendEmailCommand({
+    Source: process.env.AWS_SES_SENDER!,
+    Destination: {
+      ToAddresses: [process.env.TO_EMAIL!],
     },
-    to: process.env.TO_EMAIL!,
-    subject: "New Portfolio Contact Message",
-    html: emailHtml,
-  };
+    ReplyToAddresses: [],
+    Message: {
+      Body: {
+        Html: {
+          Charset: "UTF-8",
+          Data: emailHtml,
+        },
+      },
+      Subject: {
+        Charset: "UTF-8",
+        Data: "New Portfolio Contact Message",
+      },
+    },
+  });
 
-  return await transporter.sendMail(options);
+  return await sesClient.send(sendEmailCommand);
 }
