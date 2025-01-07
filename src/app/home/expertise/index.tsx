@@ -102,8 +102,8 @@ export default function HomeExpertise() {
                 )}
               >
                 I build scalable full-stack applications with modern tools /
-                tech including Nest.js, Deno, Node.js, PostgreSQL, Redis, AWS
-                and more.
+                tech including Next.js, NestJS, Deno, Node.js, PostgreSQL,
+                Redis, AWS and more.
               </p>
             </div>
           </m.div>

@@ -19,6 +19,11 @@ export const navLinks = [
     name: "Contact",
     href: "/contact",
   },
+  {
+    name: "CV",
+    href: "https://read.cv/brandon20",
+    external: true,
+  },
 ];
 
 export const works: Work[] = [
@@ -29,7 +34,7 @@ export const works: Work[] = [
     image: "/assets/images/homie.png",
     images: [],
     details: [
-      `Homie is a project management tool that uses AI to help you manage your projects.`,
+      `Homie is an AI-powered project management tool designed to streamline your workflows and simplify project management.`,
     ],
     technologies: ["Next.js", "Framer", "Tailwind CSS"],
     scope: [

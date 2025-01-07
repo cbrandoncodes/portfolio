@@ -16,10 +16,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     <button
       className={clsx(
         buttonStyles.button,
-        {
-          [buttonStyles[`button--${size}`]]: size,
-          [buttonStyles[`button--${theme}`]]: theme,
-        },
+        buttonStyles[`button--${size}`],
+        buttonStyles[`button--${theme}`],
         className
       )}
       ref={ref}

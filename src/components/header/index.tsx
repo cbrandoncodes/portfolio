@@ -70,7 +70,7 @@ export default function Header() {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [navOpen]);
 
   useEffect(() => {
     const calculateSettingAsThemeString = (
@@ -192,10 +192,11 @@ export default function Header() {
 
         <div>
           <nav className={clsx(headerStyles["nav-items"])}>
-            {navLinks.map(({ name, href }, i) => (
+            {navLinks.map(({ name, href, external = false }, i) => (
               <div className={clsx(headerStyles["nav-item"])} key={i}>
                 <Link
                   href={href}
+                  target={external ? "_blank" : undefined}
                   className={clsx(
                     "text-md",
                     segment === name ? headerStyles.active : ""
