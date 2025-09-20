@@ -7,7 +7,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = baseMetadata({
   title: "Software Developer - Brandon",
-  description: "Software Developer - Brandon",
+  description:
+    "Versatile developer crafting digital experiences from web to mobile and AI. Building solutions that bridge technology and human needs.",
   slug: "/",
 });
 

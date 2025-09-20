@@ -14,7 +14,7 @@ export function baseMetadata({
 }): Metadata {
   const defTitle = "Brandon";
   const defDescription =
-    "Hi, I'm Brandon Chikezie. I am a Full-Stack Developer. I build accessible and scalable applications.";
+    "Hi, I'm Brandon Chikezie. Full-Stack Developer building web, mobile, and AI solutions with a focus on accessibility and scalability.";
   const pageTitle = title || defTitle;
   const pageDescription = description || defDescription;
 

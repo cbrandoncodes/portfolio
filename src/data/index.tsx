@@ -21,16 +21,76 @@ export const navLinks = [
   },
   {
     name: "CV",
-    href: "https://read.cv/brandon20",
+    href: "https://drive.google.com/file/d/1buTV37zueMiJQYL3cifdrYJEnzOZhg7K/view?usp=drive_link",
     external: true,
   },
 ];
 
 export const works: Work[] = [
   {
+    name: "Misfit Marketing",
+    overview:
+      "We're here to make brands that stand out, with strategy, guts, and killer creative.",
+    link: "https://meetmisfitmarketing.com",
+    image: "/assets/images/misfit.png",
+    images: [
+      "/assets/images/misfit-1.png",
+      "/assets/images/misfit-2.png",
+      "/assets/images/misfit-3.png",
+    ],
+    details: [
+      `Misfit Marketing is a brand agency based in United States.`,
+      `Developed a comprehensive, fully responsive website for Misfit Marketing featuring modern design principles and seamless user experience. The site includes dynamic contact forms with email integration, optimized performance with server-side rendering, and robust content management capabilities. Built with Next.js 15 for optimal SEO and performance, styled with Tailwind CSS for consistent design, and deployed on Vercel with AWS S3 for scalable asset storage and Amazon SES for reliable email delivery.`,
+    ],
+    technologies: [
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "Amazon SES",
+      "AWS S3",
+      "Vercel",
+    ],
+    scope: [
+      "Full-Stack Development",
+      "Front-End Development",
+      "Responsive Design",
+      "SEO",
+    ],
+    year: 2025,
+  },
+  {
+    name: "Zendra.Health",
+    overview:
+      "AI-powered health companion for personalized workouts, nutrition, and wellness.",
+    link: "https://zendra.health",
+    image: "/assets/images/zendra.health.png",
+    images: ["/assets/images/zendra.health-1.png"],
+    details: [
+      `Zendra Health is a digital health and fitness application focused on creating personalized workout routines, nutrition guidance, and holistic wellness plans tailored to user goals and health conditions.`,
+      `Developed a seamless, mobile-first web app featuring an AI-powered routine generator through multi-step forms (General Info, Health Info, Preferences, and Extras). The app includes a health chatbot for ongoing guidance, progress tracking for routines, and integrated health tips presented in an engaging, modern UI.`,
+      `The platform emphasizes accessibility, modern UI/UX principles, and scalable cloud-native deployment.`,
+    ],
+    technologies: [
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "OpenAI API",
+      "Supabase",
+      "Vercel",
+    ],
+    scope: [
+      "Full-Stack Development",
+      "Front-End Development",
+      "AI Integration",
+      "Responsive Design",
+      "SEO",
+    ],
+    year: 2025,
+  },
+  {
     name: "Homie",
     overview: "AI powered project manager",
-    link: "https://homie.gg",
+    link: "https://homie-next.vercel.app",
     image: "/assets/images/homie.png",
     images: [],
     details: [
@@ -159,7 +219,7 @@ export const testimonials = [
 export const socials = [
   {
     name: "GitHub",
-    url: "https://github.com/brandon30067308",
+    url: "https://github.com/cbrandoncodes",
   },
   {
     name: "LinkedIn",
@@ -180,7 +240,7 @@ export const contactLinks = [
   },
   {
     name: "GitHub",
-    link: "https://github.com/brandon30067308",
+    link: "https://github.com/cbrandoncodes",
     icon: () => <Github size={20} strokeWidth={2} />,
   },
   {

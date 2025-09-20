@@ -1,12 +1,14 @@
 import "./globals.scss";
 
-import PageTransition from "@/components/page-transition";
-import BaseLayout from "@/components/layouts/base-layout";
-import clsx from "clsx";
+import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { PT_Sans, Roboto_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import Script from "next/script";
-import type { Metadata } from "next";
+import PageTransition from "@/components/page-transition";
+import BaseLayout from "@/components/layouts/base-layout";
+import clsx from "clsx";
 import { baseMetadata } from "@/utils/base-metadata";
 
 const ptSans = PT_Sans({
@@ -65,6 +67,8 @@ export default function RootLayout({
         </PageTransition>
 
         <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js" />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
