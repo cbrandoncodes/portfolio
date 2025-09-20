@@ -5,8 +5,13 @@ import { baseMetadata } from "@/utils/base-metadata";
 import slug from "slug";
 import { notFound } from "next/navigation";
 
-export default function Project({ params }: { params: { slug: string } }) {
-  const work = works.find(({ name }) => slug(name) === params.slug);
+export default async function Project({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug: projectSlug } = await params;
+  const work = works.find(({ name }) => slug(name) === projectSlug);
 
   if (!work) {
     return notFound();
@@ -31,13 +36,18 @@ export default function Project({ params }: { params: { slug: string } }) {
   );
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const work = works.find(({ name }) => slug(name) === params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug: projectSlug } = await params;
+  const work = works.find(({ name }) => slug(name) === projectSlug);
 
   return baseMetadata({
     title: work?.name ? `${work?.name} - Brandon` : "Project",
     description: work?.overview ?? "Brandon - Project",
-    slug: `/project/${params.slug}`,
+    slug: `/project/${projectSlug}`,
   });
 }
 
